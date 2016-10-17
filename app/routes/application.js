@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   redirect: function() {
-    this.trasitionTo('clock');
+    this.transitionTo('clock');
   }
 });
