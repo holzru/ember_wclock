@@ -11,13 +11,18 @@ export default Ember.Controller.extend({
     }
     this.set('timezones', timezones);
     this._super();
-  }, selectedTimezone: null,
+  },
+  selectedTimezone: null,
   actions: {
     add: function () {
       let timezone = this.store.createRecord('timezone', {
         name: this.get('selectedTimezone').name,
         offset: this.get('selectedTimezone').offset
-      })
+      });
+      timzeone.save();
+    },
+    remove: function(timezone) {
+      timezone.destroyRecord();
     }
   }
 });
