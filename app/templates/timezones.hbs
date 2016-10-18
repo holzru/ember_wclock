@@ -1,7 +1,10 @@
 <h2>Add Timezone</h2>
 
-<div>{{ view Ember.Select content=timezones selection=selectedTimezone
-   optionValuePath='content.offset' optionLabelPath='content.name'}}</div>
+<div>
+  {{#each timezones as |zone|}}
+    <li>{{zone.name}}{{zone.offset}}</li>
+  {{/each}}
+</div>
 
 <button {{action 'add'}}>Add Timezone</button>
 
